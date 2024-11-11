@@ -11,17 +11,18 @@
   },
   "type": "module",
   "scripts": {
+    "build": "tsc --build",
     "eslint": "eslint --ext .ts .",
     "prettier-check": "prettier '**/*.ts' --check",
     "prettier-write": "prettier '**/*.ts' --write"
   },
   "devDependencies": {
-    "@types/node": "^20.11.30",
-    "@typescript-eslint/eslint-plugin": "^7.3.1",
-    "@typescript-eslint/parser": "^7.3.1",
-    "eslint": "^8.57.0",
-    "prettier": "3.2.5",
+    "@types/node": "^22.9.0",
+    "@typescript-eslint/eslint-plugin": "^8.13.0",
+    "@typescript-eslint/parser": "^8.13.0",
+    "eslint": "^9.14.0",
+    "prettier": "^3.3.3",
     "ts-node": "^10.9.2",
-    "typescript": "^5.4.2"
+    "typescript": "^5.6.3"
   }
 }

@@ -4,7 +4,11 @@
 Design Patterns é um repositório composto por exemplos de padrões de projeto escritos em TypeScript.
 
 Todos os exemplos são funcionais, teste da seguinte maneira:  
-`node --loader ts-node/esm ./folder/index.ts`
+`node --import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("ts-node/esm", pathToFileURL("./"));' script.ts`
+
+Ou:  
+`npm run build`  
+`node build/script.ts`
 
 ## Padrões de Projetos
 - Gang of Four
@@ -16,6 +20,7 @@ Todos os exemplos são funcionais, teste da seguinte maneira:
 
 ## Fonte
 Todo conteúdo foi retirado de:  
+[ChatGPT](https://chatgpt.com)  
 [Wikipedia - Software design pattern](https://en.wikipedia.org/wiki/Software_design_pattern)  
 
 
