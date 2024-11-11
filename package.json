@@ -11,6 +11,7 @@
   },
   "type": "module",
   "scripts": {
+    "build": "tsc --build",
     "eslint": "eslint --ext .ts .",
     "prettier-check": "prettier '**/*.ts' --check",
     "prettier-write": "prettier '**/*.ts' --write"
