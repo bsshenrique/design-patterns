@@ -17,6 +17,7 @@ Ou:
   - Behavioral
 - Other
   - [Method Chaining](other/method-chaining)
+  - [Currying](other/currying.ts)
 
 ## Fonte
 Todo conteúdo foi retirado de:  
