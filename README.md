@@ -16,7 +16,7 @@ Ou:
   - Structural
   - Behavioral
 - Other
-  - [Method Chaining](other/method-chaining)
+  - [Method Chaining](other/method-chaining.ts)
   - [Currying](other/currying.ts)
 
 ## Fonte
