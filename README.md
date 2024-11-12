@@ -16,8 +16,9 @@ Ou:
   - Structural
   - Behavioral
 - Other
-  - [Method Chaining](other/method-chaining.ts)
   - [Currying](other/currying.ts)
+  - [Method Chaining](other/method-chaining.ts)
+  - [Partial Application](other/partial-application.ts)
 
 ## Fonte
 Todo conteúdo foi retirado de:  
