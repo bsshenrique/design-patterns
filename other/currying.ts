@@ -18,7 +18,7 @@ function simpleFunction(a: string, b: string, c: string) {
 function currying(a: string) {
   return function (b: string) {
     return function (c: string) {
-      return a.concat(b).concat(c);
+      return a + b + c;
     };
   };
 }
@@ -35,10 +35,9 @@ function getRandomNumber() {
 
 const rgb = (r: number) => (g: number) => (b: number) => `rgb(${r},${g},${b})`;
 
-const red = rgb(Math.floor(Math.random() * 255))(0)(0);
-const green = rgb(0)(Math.floor(Math.random() * 255))(0);
-const blue = rgb(0)(0)(Math.floor(Math.random() * 255));
-
+const red = rgb(getRandomNumber())(0)(0);
+const green = rgb(0)(getRandomNumber())(0);
+const blue = rgb(0)(0)(getRandomNumber());
 console.log(red);
 console.log(green);
 console.log(blue);
