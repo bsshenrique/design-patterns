@@ -17,6 +17,7 @@ Ou:
   - Behavioral
 - Other
   - [Currying](other/currying.ts)
+  - [Function Composition](other/function-composition.ts)
   - [Method Chaining](other/method-chaining.ts)
   - [Partial Application](other/partial-application.ts)
 
@@ -24,5 +25,3 @@ Ou:
 Todo conteúdo foi retirado de:  
 [ChatGPT](https://chatgpt.com)  
 [Wikipedia - Software design pattern](https://en.wikipedia.org/wiki/Software_design_pattern)  
-
-
