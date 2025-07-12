@@ -4,7 +4,7 @@
 Design Patterns é um repositório composto por exemplos de padrões de projeto escritos em TypeScript.
 
 Todos os exemplos são funcionais, teste da seguinte maneira:  
-`node --import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("ts-node/esm", pathToFileURL("./"));' script.ts`
+`node --experimental-strip-types --experimental-transform-types script.ts`
 
 Ou:  
 `npm run build`  
