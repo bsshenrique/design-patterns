@@ -13,6 +13,7 @@ Ou:
 ## Padrões de Projetos
 - Gang of Four
   - Creational
+    - [Factory Method](gang-of-four/creational/factory-method.ts)
   - Structural
   - Behavioral
 - Other
@@ -24,4 +25,4 @@ Ou:
 ## Fonte
 Todo conteúdo foi retirado de:  
 [ChatGPT](https://chatgpt.com)  
-[Wikipedia - Software design pattern](https://en.wikipedia.org/wiki/Software_design_pattern)  
+[Wikipedia - Software design pattern](https://en.wikipedia.org/wiki/Software_design_pattern)
