@@ -14,6 +14,7 @@ Ou:
 - Gang of Four
   - Creational
     - [Factory Method](gang-of-four/creational/factory-method.ts)
+    - [Singleton](gang-of-four/creational/singleton.ts)
   - Structural
   - Behavioral
 - Other
@@ -25,4 +26,5 @@ Ou:
 ## Fonte
 Todo conteúdo foi retirado de:  
 [ChatGPT](https://chatgpt.com)  
+[Refactoring.Guru](https://refactoring.guru)
 [Wikipedia - Software design pattern](https://en.wikipedia.org/wiki/Software_design_pattern)
