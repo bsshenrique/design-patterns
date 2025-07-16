@@ -17,6 +17,7 @@ Ou:
     - [Singleton](gang-of-four/creational/singleton.ts)
   - Structural
   - Behavioral
+    - [Strategy](gang-of-four/behavioral/strategy.ts)
 - Other
   - [Currying](other/currying.ts)
   - [Function Composition](other/function-composition.ts)
