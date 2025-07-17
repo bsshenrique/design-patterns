@@ -14,6 +14,7 @@ Ou:
 - Gang of Four
   - Creational
     - [Factory Method](gang-of-four/creational/factory-method.ts)
+    - [Prototype](gang-of-four/creational/prototype.ts)
     - [Singleton](gang-of-four/creational/singleton.ts)
   - Structural
   - Behavioral
