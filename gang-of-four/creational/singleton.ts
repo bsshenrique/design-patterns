@@ -1,36 +1,45 @@
 /**
  * Singleton
  *
- * Aplicabilidade, problemas comuns resolvidos:
- * Um singleton garante que o objeto solicitado seja sempre o mesmo;
- * Útil para instâncias únicas de conexão com bancos, loggers, configurações e etc.
+ * Conceito
+ * Garante que uma classe tenha apenas uma instância e fornece um ponto de acesso global a essa instância.
+ *
+ * Implementação
+ * Singleton  - Classe de uma única instância e de acesso global.
+ *
+ * Cenário de uso
+ * Imagine um sistema com a necessidade de registrar logs no console.
+ * O programa pode chamar a instância do singleton sempre que for necessária.
  */
 
-class Time {
-  static #instance: Time;
+// Singleton
+class Logger {
+  static #instance: Logger;
 
-  // O construtor deve ser definido como privado
-  // O Objetivo é impedir criar instâncias "new"
+  // O construtor deve ser definido como privado, isso garante que a classe não possa ser instanciada
   private constructor() {}
 
-  // Um singleton deve sempre definir um "getter" disponibilizando a sua única instância
-  public static get getInstance(): Time {
-    if (!Time.#instance) {
-      Time.#instance = new Time();
+  // Um singleton deve sempre definir um método getter disponibilizando a sua única instância
+  // Lazy initialization é uma prática comum em singletons
+  public static getInstance(): Logger {
+    if (!Logger.#instance) {
+      Logger.#instance = new Logger();
     }
 
-    return Time.#instance;
+    return Logger.#instance;
   }
 
-  // Regra de negócio
-  public display() {
+  public log(message: string) {
     const date = new Date();
-    return date.toISOString();
+    console.log(`[${date.toISOString()}] - ${message}`);
   }
 }
 
-const time1 = Time.getInstance;
-const time2 = Time.getInstance;
+const logger1 = Logger.getInstance();
+const logger2 = Logger.getInstance();
 
-console.log(time1 === time2);
-console.log(`${time1.display()}\n${time2.display()}`);
+console.log(logger1 === logger2);
+logger1.log("Message 1");
+logger1.log("Message 2");
+logger1.log("Message 3");
+logger1.log("Message 4");
