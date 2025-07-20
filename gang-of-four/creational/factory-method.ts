@@ -1,86 +1,93 @@
 /**
  * Factory Method
  *
- * Aplicabilidade, problemas comuns resolvidos:
- * OCP (SOLID): Adicionar novas funcionalidades sem alterar o código existente;
- * Padronizar o que deve ser criado utilizando o factory method;
- * Polimorfismo para evitar condicionais e lógicas de difícil manutenção.
+ * Conceito
+ * Define uma interface para criar um objeto, mas permite que subclasses decidam qual classe instanciar.
+ *
+ * Implementação
+ * Product            - Interface ou classe abstrata com as características dos objetos que serão criados pelo factory method;
+ * Concrete Product   - Implementações concretas do produto, representam os objetos reais criados pelo factory method;
+ * Creator            - Interface ou classe abstrata que define o factory method;
+ * Concrete Creator   - Implementa o factory method e retorna um concrete product.
+ *
+ * Cenário de uso
+ * Imagine um sistema que precise manipular diferentes tipos de arquivos (PDF, TXT, etc.).
+ * Se o sistema instanciasse diretamente os produtos concretos, resultaria em um forte acoplamento entre o cliente e as classes específicas.
+ * O padrão resolve esse problema ao definir um factory method em uma classe abstrata ou interface, o creator.
+ * As subclasses implementam implementam o factory method e decidem qual produto concreto criar.
+ * Isso permite estender o sistema criando novos produtos concretos sem modificar o código do cliente.
  */
 
 // Product
-// Produto abstrato
-// Interface para os objetos criados pelo factory method
-// Define as operações que todo concrete product deve implementar
-interface Arquivo {
-  criar(): string;
-  ler(): string;
+interface MyFile {
+  // Operações que todo concrete product deve implementar
+  create(): string;
+  read(): string;
 }
 
 // Concrete Product
-// Produto concreto
-// Implementação específica para um product
-class ArquivoPDF implements Arquivo {
-  criar(): string {
+class MyFilePdf implements MyFile {
+  create(): string {
     return "myPDF.pdf";
   }
 
-  ler(): string {
+  read(): string {
     return "My PDF content";
   }
 }
 
 // Concrete Product
-class ArquivoTXT implements Arquivo {
-  criar(): string {
+class MyFileTxt implements MyFile {
+  create(): string {
     return "myTXT.txt";
   }
 
-  ler(): string {
+  read(): string {
     return "My TXT content";
   }
 }
 
 // Creator
-// Classe criadora abstrata
-// Classe que contém o factory method que retorna um product
-abstract class Documento {
+abstract class Document {
   // Factory Method
-  // Deve ser implementada pelo concrete creator e retornar um objeto product
-  abstract criarDocumento(): Arquivo;
+  abstract createDocument(): MyFile;
 
-  // É comum que o creator contenha alguma lógica de negócio que dependa do product
-  lerDocumento(): string {
-    const documento = this.criarDocumento();
-    return documento.ler();
+  // O creator pode fornecer uma implementação padrão que utiliza o factory method
+  readDocument(): string {
+    const documento = this.createDocument();
+    return documento.read();
   }
 }
 
 // Concrete Creator
-// Um concrete creator deve sobrescrever o factory method
-class DocumentoPDF extends Documento {
-  // O objetivo é retornar o objeto concrete product correspondente
-  // Assinatura deve ser mantida para que o concrete creator permaneça independente
-  criarDocumento(): Arquivo {
-    return new ArquivoPDF();
+class DocumentPdf extends Document {
+  // Um concrete creator deve sobrescrever o factory method e retornar o objeto concrete product correspondente
+  // A assinatura deve ser mantida para que o concrete creator permaneça independente
+  createDocument(): MyFile {
+    return new MyFilePdf();
   }
 }
 
 // Concrete Creator
-class DocumentoTXT extends Documento {
-  criarDocumento(): Arquivo {
-    return new ArquivoTXT();
+class DocumentTxt extends Document {
+  createDocument(): MyFile {
+    return new MyFileTxt();
   }
 }
 
-// O uso se baseia em concrete creators
+// O uso pelo cliente se baseia em concrete creators
 // Ou seja, são criados produtos específicos
-const pdf = new DocumentoPDF();
-const txt = new DocumentoTXT();
+const genericPdf = new DocumentPdf();
+const genericTxt = new DocumentTxt();
 
-console.log(pdf.lerDocumento());
-console.log(pdf.criarDocumento().criar());
-console.log(pdf.criarDocumento().ler());
+// Utilizando a implementação padrão oferecida pelo creator
+console.log(genericPdf.readDocument());
+console.log(genericTxt.readDocument());
 
-console.log(txt.lerDocumento());
-console.log(txt.criarDocumento().criar());
-console.log(txt.criarDocumento().ler());
+// Utilizando a implementação específica
+const concretePdf = genericPdf.createDocument();
+const concreteTxt = genericTxt.createDocument();
+console.log(concretePdf.create());
+console.log(concretePdf.read());
+console.log(concreteTxt.create());
+console.log(concreteTxt.read());
