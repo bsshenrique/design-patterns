@@ -6,12 +6,13 @@
  * O objetivo é permitir que objetos sejam criados de forma dinâmica e flexível, copiando as características de um modelo já existente.
  *
  * Implementação
- * Prototype            Classe abstrata base ou interface com um método "clone";
- * Concrete Prototype   Classe concreta que implementa a interface prototype e define como a clonagem é feita.
+ * Prototype            - Classe abstrata base ou interface com um método clone;
+ * Concrete Prototype   - Classe concreta que implementa a interface prototype e define como a clonagem é feita;
+ * Client               - Objeto que solicita os clones.
  *
  * Cenário de uso
- * Imagine um sistema em que, ao pressionar uma tecla de atalho, o usuário deseja duplicar um objeto já criado em tempo de execução.
- * Se esse objeto foi criado de forma dinâmica, é mais simples que ele possua um método "clone" para se duplicar facilmente.
+ * Imagine um sistema em que, ao pressionar uma tecla de atalho, o usuário possa duplicar um objeto existente.
+ * Se esse objeto foi criado de forma dinâmica, é mais simples que ele possua um método clone para se duplicar facilmente.
  */
 
 // Prototype
@@ -29,11 +30,13 @@ class Person implements Prototype<Person> {
     this.name = name;
   }
 
-  public clone() {
+  // Atente-se a necessidade de uma shallow copy ou deep copy
+  public clone(): Person {
     return new Person(this.id, this.name);
   }
 }
 
+// Client
 const first = new Person("1234", "Abcd");
 const second = first.clone();
 console.log(first.id);

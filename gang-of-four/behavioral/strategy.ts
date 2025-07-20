@@ -1,11 +1,18 @@
 /**
  * Strategy
  *
- * Permite que um objeto tenha seu comportamento alterado sem a necessidade de alterar o código.
- * As alterações comportamentais no objeto são feitas utilizando "estratégias".
+ * Conceito
+ * Permite definir uma família de algoritmos, encapsulá-los e torná-los intercambiáveis.
+ * Dessa forma, o comportamento de um objeto pode ser alterado em tempo de execução sem modificar seu código.
  *
- * Aplicabilidade, problemas comuns resolvidos:
- * Comportamentos que precisam ser alterados de acordo com o contexto do programa.
+ * Implementação
+ * Strategy           - Interface obrigatória a todos algoritmos;
+ * Concrete Strategy  - Implementam os algoritmos necessários;
+ * Context            - Utiliza uma referência a um objeto strategy para que seja possível executar qualquer estratégia.
+ *
+ * Cenário de uso
+ * Imagine um programa com a necessidade de organizar uma tabela de pessoas.
+ * Ao em vez de segmentar o programa com IF, pode-se alterar o comportamento utilizando diferentes estratégias.
  */
 
 interface Person {
@@ -14,7 +21,6 @@ interface Person {
 }
 
 // Strategy
-// Strategy define a Interface comum a todo concrete strategy
 interface Strategy {
   // Operações comuns aos algoritmos de estratégia
   sort(person: Person[]): Person[];
@@ -35,9 +41,9 @@ class SortByName implements Strategy {
 }
 
 // Context
-// O contexto não deve conhecer nenhuma estratégias concretas, apenas a interface Strategy
-// A interface garante que ele seja compatível com qualquer estratégia
 class Context {
+  // O contexto não deve conhecer nenhuma estratégias concretas, apenas a interface strategy
+  // Ele deve ser compatível com qualquer estratégia
   private strategy: Strategy;
 
   // Estratégia usada para o objeto ser inicializado
@@ -51,19 +57,19 @@ class Context {
   }
 
   // A interface strategy garante que qualquer estratégia seja compatível com a execução do algoritmo
-  public sortPerson(person: Person[]) {
+  public sort(person: Person[]) {
     return this.strategy.sort(person);
   }
 }
 
 const person: Person[] = [
   { id: "03", name: "AAA" },
-  { id: "01", name: "BBB" },
-  { id: "04", name: "CCC" },
-  { id: "02", name: "DDD" },
+  { id: "01", name: "CCC" },
+  { id: "04", name: "DDD" },
+  { id: "02", name: "BBB" },
 ];
 
 const context = new Context(new SortById());
-console.log(context.sortPerson(person));
+console.log(context.sort(person));
 context.setStrategy(new SortByName());
-console.log(context.sortPerson(person));
+console.log(context.sort(person));
