@@ -17,6 +17,7 @@ Ou:
     - [Prototype](gang-of-four/creational/prototype.ts)
     - [Singleton](gang-of-four/creational/singleton.ts)
   - Structural
+    - [Adapter](gang-of-four/structural/adapter.ts)
   - Behavioral
     - [Strategy](gang-of-four/behavioral/strategy.ts)
 - Other
