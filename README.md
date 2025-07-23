@@ -19,6 +19,7 @@ Ou:
   - Structural
     - [Adapter](gang-of-four/structural/adapter.ts)
   - Behavioral
+    - [Command](gang-of-four/behavioral/command.ts)
     - [Strategy](gang-of-four/behavioral/strategy.ts)
 - Other
   - [Currying](other/currying.ts)
@@ -29,5 +30,5 @@ Ou:
 ## Fonte
 Todo conteúdo foi retirado de:  
 [ChatGPT](https://chatgpt.com)  
-[Refactoring.Guru](https://refactoring.guru)
+[Refactoring.Guru](https://refactoring.guru)  
 [Wikipedia - Software design pattern](https://en.wikipedia.org/wiki/Software_design_pattern)
