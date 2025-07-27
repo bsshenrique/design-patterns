@@ -2,7 +2,8 @@
  * # State
  *
  * ## Conceito
- * Permitir que um objeto mude seu comportamento quando seu estado interno muda. O objeto parecerá mudar sua classe
+ * Permite que um objeto altere seu comportamento quando seu estado interno muda.
+ * O objeto parecerá ter mudado sua classe.
  *
  * ## Explicação
  * O padrão utiliza classes chamadas de estados concretos para representar os possíveis estados.

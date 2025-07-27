@@ -1,20 +1,31 @@
 /**
- * Factory Method
+ * # Factory Method
  *
- * Conceito
- * Define uma interface para criar um objeto, mas permite que subclasses decidam qual classe instanciar.
+ * ## Conceito
+ * Define uma interface para a criação de um objeto, mas permite que as subclasses decidam qual classe instanciar.
+ * O Factory Method permite adiar a instanciação para as subclasses.
  *
- * Implementação
- * Product            - Interface ou classe abstrata com as características dos objetos que serão criados pelo factory method;
- * Concrete Product   - Implementações concretas do produto, representam os objetos reais criados pelo factory method;
- * Creator            - Interface ou classe abstrata que define o factory method;
- * Concrete Creator   - Implementa o factory method e retorna um concrete product.
+ * ## Implementação
+ * Product            Classe Abstrata | Interface
+ * Interface comum aos produtos concretos que serão criados pelo factory method;
  *
- * Cenário de uso
+ * Concrete Product   Classe
+ * Implementações concretas do produto, representam os objetos reais criados pelo factory method.
+ *
+ * Creator            Classe Abstrata  | Interface
+ * Define o factory method.
+ *
+ * Concrete Creator   Classe
+ * Implementa o factory method e retorna um produto concreto.
+ *
+ * Client
+ * Utiliza o criador concreto para obter os produtos concretos.
+ *
+ * ## Cenário de uso
  * Imagine um sistema que precise manipular diferentes tipos de arquivos (PDF, TXT, etc.).
  * Se o sistema instanciasse diretamente os produtos concretos, resultaria em um forte acoplamento entre o cliente e as classes específicas.
  * O padrão resolve esse problema ao definir um factory method em uma classe abstrata ou interface, o creator.
- * As subclasses implementam implementam o factory method e decidem qual produto concreto criar.
+ * As subclasses implementam o factory method e decidem qual produto concreto criar.
  * Isso permite estender o sistema criando novos produtos concretos sem modificar o código do cliente.
  */
 
