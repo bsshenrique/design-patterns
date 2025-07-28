@@ -18,6 +18,7 @@ Ou:
     - [Singleton](gang-of-four/creational/singleton.ts)
   - Structural
     - [Adapter](gang-of-four/structural/adapter.ts)
+    - [Decorator](gang-of-four/structural/decorator.ts)
   - Behavioral
     - [Command](gang-of-four/behavioral/command.ts)
     - [State](gang-of-four/behavioral/state.ts)
