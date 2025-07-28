@@ -1,22 +1,33 @@
 /**
- * Adapter
+ * # Adapter
  *
- * Conceito
- * Permite adaptar uma interface incompatível em uma interface compatível para um cliente.
+ * ## Conceito
+ * Converte a interface de uma classe em outra interface esperada pelos clientes.
+ * O Adapter permite que classes com interfaces incompatíveis trabalhem juntas.
  *
- * Implementação
- * Adaptee  - Classe existente cuja interface é incompatível com a interface target;
- * Target   - Interface exigida pelo cliente;
- * Adapter  - Classe responsável por tornar duas interfaces compatíveis, a interface do adaptee com a interface target;
- * Client   - Classe que exige a interface target.
+ * ## Explicação
+ * Permite adaptar uma interface incompatível e já em uso em uma interface compatível com a exigida pelo cliente.
  *
- * Cenário de uso
+ * ## Implementação
+ * Adaptee  Classe
+ * Classe existente cuja interface é incompatível com a interface que o cliente exige.
+ *
+ * Target   Classe Abstrata | Interface
+ * Interface exigida pelo cliente.
+ *
+ * Adapter  Classe
+ * Responsável por tornar duas interfaces compatíveis, a interface do adaptee com a interface target.
+ *
+ * Client
+ * Exige a interface target.
+ *
+ * ## Cenário de uso
  * Imagine um monitor que oferece suporte apenas para entrada HDMI e um dispositivo cliente que oferece apenas saída VGA.
  * Para que os dois possam se comunicar, será necessário adaptar a saída VGA para a entrada HDMI.
  */
 
-// Interface usada pelo adaptee
-// Incompatível com o que o cliente exige
+// Interface usada pelo adaptee, a classe monitor
+// Incompatível com o que o cliente exige, a interface vga
 interface Hdmi {
   connect(): void;
   display(): void;

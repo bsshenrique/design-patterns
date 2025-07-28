@@ -1,16 +1,24 @@
 /**
- * Prototype
+ * # Prototype
  *
- * Conceito
+ * ## Conceito
+ * Especifica os tipos de objetos a serem criados usando uma instância protótipo e cria novos objetos copiando esse protótipo.
+ *
+ * ## Explicação
  * Permite criar objetos a partir da clonagem de um objeto existente, em vez de instanciá-los diretamente com new.
  * O objetivo é permitir que objetos sejam criados de forma dinâmica e flexível, copiando as características de um modelo já existente.
  *
- * Implementação
- * Prototype            - Classe abstrata base ou interface com um método clone;
- * Concrete Prototype   - Classe concreta que implementa a interface prototype e define como a clonagem é feita;
- * Client               - Objeto que solicita os clones.
+ * ## Implementação
+ * Prototype            Classe Abstrata | Interface
+ * Declara o método de clonagem que deve ser implementado pelas classes..
  *
- * Cenário de uso
+ * Concrete Prototype   Classe
+ * Implementa a interface prototype e define como a clonagem é feita.
+ *
+ * Client
+ * Objeto que solicita os clones.
+ *
+ * ## Cenário de uso
  * Imagine um sistema em que, ao pressionar uma tecla de atalho, o usuário possa duplicar um objeto existente.
  * Se esse objeto foi criado de forma dinâmica, é mais simples que ele possua um método clone para se duplicar facilmente.
  */

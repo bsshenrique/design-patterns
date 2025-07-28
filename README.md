@@ -20,6 +20,7 @@ Ou:
     - [Adapter](gang-of-four/structural/adapter.ts)
   - Behavioral
     - [Command](gang-of-four/behavioral/command.ts)
+    - [State](gang-of-four/behavioral/state.ts)
     - [Strategy](gang-of-four/behavioral/strategy.ts)
 - Other
   - [Currying](other/currying.ts)

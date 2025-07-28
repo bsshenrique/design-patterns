@@ -1,16 +1,28 @@
 /**
- * Strategy
+ * # Strategy
  *
- * Conceito
+ * ## Conceito
+ * Define uma família de algoritmos, encapsula cada uma delas e torná-las intercambiáveis.
+ * Strategy permite que o algoritmo varie independentemente dos clientes que o utilizam.
+ *
+ * ## Explicação
  * Permite definir uma família de algoritmos, encapsulá-los e torná-los intercambiáveis.
  * Dessa forma, o comportamento de um objeto pode ser alterado em tempo de execução sem modificar seu código.
  *
- * Implementação
- * Strategy           - Interface obrigatória a todos algoritmos;
- * Concrete Strategy  - Implementam os algoritmos necessários;
- * Context            - Utiliza uma referência a um objeto strategy para que seja possível executar qualquer estratégia.
+ * ## Implementação
+ * Strategy           Classe Abstrata | Interface
+ * Interface comum a todos algoritmos definidos pelas estratégias concretas.
  *
- * Cenário de uso
+ * Concrete Strategy  Classe
+ * Implementa uma variação específica do algoritmo exigido pela interface strategy.
+ *
+ * Context            Classe
+ * Utiliza uma referência a um objeto strategy para que seja possível executar qualquer estratégia.
+ *
+ * Client
+ * Define qual estratégia será utilizada pelo contexto.
+ *
+ * ## Cenário de uso
  * Imagine um programa com a necessidade de organizar uma tabela de pessoas.
  * Ao em vez de segmentar o programa com IF, pode-se alterar o comportamento utilizando diferentes estratégias.
  */
@@ -69,6 +81,7 @@ const person: Person[] = [
   { id: "02", name: "BBB" },
 ];
 
+// Client
 const context = new Context(new SortById());
 console.log(context.sort(person));
 context.setStrategy(new SortByName());
