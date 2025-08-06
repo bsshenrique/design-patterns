@@ -64,10 +64,6 @@ class LogTime extends Decorator {
   public log(log = ""): string {
     const time = new Date().toLocaleTimeString();
     // Pode-se acessar o objeto pai em vez de chamar o objeto encapsulado
-    console.log(super.log());
-    console.log(this.log());
-    console.log(this.logger.log());
-
     return `${time} | ${super.log(log)}`;
   }
 }
