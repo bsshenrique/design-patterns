@@ -4,7 +4,7 @@
 Design Patterns é um repositório composto por exemplos de padrões de projeto escritos em TypeScript.
 
 Todos os exemplos são funcionais, teste da seguinte maneira:  
-`node --experimental-strip-types --experimental-transform-types script.ts`
+`node --experimental-transform-types script.ts`
 
 Ou:  
 `npm run build`  
@@ -19,6 +19,7 @@ Ou:
   - Structural
     - [Adapter](gang-of-four/structural/adapter.ts)
     - [Decorator](gang-of-four/structural/decorator.ts)
+    - [Facade](gang-of-four/structural/facade.ts)
   - Behavioral
     - [Command](gang-of-four/behavioral/command.ts)
     - [State](gang-of-four/behavioral/state.ts)
