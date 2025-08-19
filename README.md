@@ -24,6 +24,7 @@ Ou:
     - [Command](gang-of-four/behavioral/command.ts)
     - [State](gang-of-four/behavioral/state.ts)
     - [Strategy](gang-of-four/behavioral/strategy.ts)
+    - [Template Method](gang-of-four/behavioral/template-method.ts)
 - Other
   - [Currying](other/currying.ts)
   - [Function Composition](other/function-composition.ts)
