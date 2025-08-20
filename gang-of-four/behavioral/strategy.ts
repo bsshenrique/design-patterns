@@ -3,7 +3,7 @@
  *
  * ## Conceito
  * Define uma família de algoritmos, encapsula cada uma delas e torná-las intercambiáveis.
- * Strategy permite que o algoritmo varie independentemente dos clientes que o utilizam.
+ * O strategy permite que o algoritmo varie independentemente dos clientes que o utilizam.
  *
  * ## Explicação
  * Permite definir uma família de algoritmos, encapsulá-los e torná-los intercambiáveis.
