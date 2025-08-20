@@ -86,12 +86,10 @@ class DocumentTxt extends Document {
     console.log("document.txt");
   }
 
-  // Override
   protected validate(): void {
     console.log("TXT validated");
   }
 
-  // Override
   protected write(): void {
     console.log("TXT created");
   }
