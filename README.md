@@ -22,6 +22,7 @@ Ou:
     - [Facade](gang-of-four/structural/facade.ts)
   - Behavioral
     - [Command](gang-of-four/behavioral/command.ts)
+    - [Chain of Responsibility](gang-of-four/behavioral/chain-of-responsibility.ts)
     - [State](gang-of-four/behavioral/state.ts)
     - [Strategy](gang-of-four/behavioral/strategy.ts)
     - [Template Method](gang-of-four/behavioral/template-method.ts)
@@ -34,5 +35,6 @@ Ou:
 ## Fonte
 Todo conteúdo foi retirado de:  
 [ChatGPT](https://chatgpt.com)  
-[Refactoring.Guru](https://refactoring.guru)  
+[GeeksforGeeks](https://www.geeksforgeeks.org/system-design/software-design-patterns/)  
+[Refactoring.Guru](https://refactoring.guru/design-patterns)  
 [Wikipedia - Software design pattern](https://en.wikipedia.org/wiki/Software_design_pattern)
