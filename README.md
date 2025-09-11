@@ -20,6 +20,7 @@ Ou:
     - [Adapter](gang-of-four/structural/adapter.ts)
     - [Decorator](gang-of-four/structural/decorator.ts)
     - [Facade](gang-of-four/structural/facade.ts)
+    - [Proxy](gang-of-four/structural/proxy.ts)
   - Behavioral
     - [Command](gang-of-four/behavioral/command.ts)
     - [Chain of Responsibility](gang-of-four/behavioral/chain-of-responsibility.ts)
