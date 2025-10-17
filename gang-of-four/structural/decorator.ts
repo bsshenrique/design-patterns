@@ -1,36 +1,27 @@
-/**
- * # Decorator
- *
- * ## Conceito
- * Anexa responsabilidades adicionais a um objeto dinamicamente.
- * Decorators fornecem uma alternativa flexível à subclasse para estender funcionalidades.
- *
- * ## Implementação
- * Component            Classe Abstrata | Interface
- * Define a interface comum aos objetos que podem ter responsabilidades adicionadas dinamicamente.
- *
- * Concrete Component   Classe
- * Representa o objeto base ao qual decoradores podem ser adicionados.
- *
- * Decorator            Classe
- * Atua como classe base de todos os decoradores concretos, fornecendo acesso ao objeto componente encapsulado.
- *
- * Concrete Decorator   Classe
- * Estende o decorator e adiciona novas responsabilidades ao componente.
- *
- * ## Cenário de uso
- * Imagine um sistema de log em uma aplicação.
- * Nesse sistema, determinados componentes precisam de logs apenas com a hora, outros apenas a data e em outros tanto data como hora.
- * Uma forma bem fácil de atender a esse cenário é utilizando decorators.
- */
+// Decorator
+// Anexa responsabilidades adicionais a um objeto dinamicamente
+// Decorators fornecem uma alternativa flexível à subclasse para estender funcionalidades
+//
+// Cenário de uso
+// Imagine um sistema de log em uma aplicação
+// Nesse sistema, determinados componentes precisam de logs apenas com a hora, outros apenas a data e em outros tanto data como hora
+// Uma forma bem fácil de atender a esse cenário é utilizando decorators
+//
+// Elementos
+// Decorator
+// Component
+// Concrete Component
+// Concrete Decorator
 
 // Component
+// Define a interface comum aos objetos que podem ter responsabilidades adicionadas dinamicamente
 interface Logger {
   // Operações comuns aos decoradores
   log(log?: string): string;
 }
 
 // Concrete Component
+// Representa o objeto base ao qual decoradores podem ser adicionados
 class ConsoleLog implements Logger {
   private logger: string;
 
@@ -44,6 +35,7 @@ class ConsoleLog implements Logger {
 }
 
 // Decorator
+// Atua como classe base de todos os decoradores concretos, fornecendo acesso ao objeto componente encapsulado
 class Decorator implements Logger {
   // Deve manter uma referência ao componente para possibilitar que ele seja encapsulado
   protected logger: Logger;
@@ -59,6 +51,7 @@ class Decorator implements Logger {
 }
 
 // Concrete Decorator
+// Estende o decorator e adiciona novas responsabilidades ao componente
 class LogTime extends Decorator {
   // Um decorator pode interceptar, modificar ou validar o que for necessário antes ou depois da chamada do objeto encapsulado
   public log(log = ""): string {
@@ -76,6 +69,7 @@ class LogDate extends Decorator {
   }
 }
 
+// Client
 // O cliente deve instanciar o objeto da interface component
 // Trabalhar com a interface componente garante que o cliente permaneça independente de classes concretas
 // A quantidade de componentes concretos depende do context da aplicação, nesse caso apenas uma, mas nada impede que sejam vários

@@ -1,23 +1,17 @@
-/**
- * # Template Method
- *
- * ## Conceito
- * Define o esqueleto de um algoritmo em uma operação, deixando alguns passos desse algoritmo para as subclasses.
- * O template method permite que as subclasses redefinam certos passos de um algoritmo sem mudar a estrutura do mesmo.
- *
- * ## Implementação
- * Abstract Class   Classe
- * Define o template method, concrete operations, primitive operations e opcionalmente hooks.
- *
- * Concrete Class   Classe
- * Definem o comportamento variável por meio de implementações personalizadas de primitive operations e hooks.
- *
- * ## Cenário de uso
- * Imagine um algoritmo capaz de gerar documentos.
- * O template method é útil para definir um esqueleto e alterar apenas o necessário de acordo com cada tipo de documento.
- */
+// Template Method
+// Define o esqueleto de um algoritmo em uma operação, deixando alguns passos desse algoritmo para as subclasses
+// O template method permite que as subclasses redefinam certos passos de um algoritmo sem mudar a estrutura do mesmo
+//
+// Quando usar
+// Imagine um algoritmo capaz de gerar documentos
+// O template method é útil para definir um esqueleto e alterar apenas o necessário de acordo com cada tipo de documento
+//
+// Elementos
+// Abstract Class
+// Concrete Class
 
 // Abstract Class
+// Define o template method, concrete operations, primitive operations e opcionalmente hooks
 abstract class Document {
   // Template method
   // Sua função é implementar as lógica geral e fixa do algoritmo
@@ -63,18 +57,16 @@ abstract class Document {
 }
 
 // Concrete Class
+// Definem o comportamento variável por meio de implementações personalizadas de primitive operations e hooks
 class DocumentPdf extends Document {
-  // Override
-  protected compress(): void {
+  protected override compress(): void {
     console.log("Compression applied");
   }
 
-  // Override
   protected validate(): void {
     console.log("PDF validated");
   }
 
-  // Override
   protected write(): void {
     console.log("PDF created");
   }
@@ -82,7 +74,7 @@ class DocumentPdf extends Document {
 
 // Concrete Class
 class DocumentTxt extends Document {
-  protected setName(): void {
+  protected override setName(): void {
     console.log("document.txt");
   }
 

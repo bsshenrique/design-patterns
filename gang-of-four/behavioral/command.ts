@@ -1,33 +1,19 @@
-/**
- * # Command
- *
- * ## Conceito
- * Encapsula uma solicitação como um objeto, permitindo parametrizar clientes com diferentes solicitações, enfileirar ou registrar solicitações e suportar operações desfazíveis.
- *
- * ## Explicação
- * O objetivo do padrão é realizar solicitações (comandos) por meio de objetos.
- *
- * ## Implementação
- * Command            Classe Abstrata | Interface
- * Declara o método execute.
- *
- * Concrete Command   Classe
- * Implementa o command e sabe qual ação específica realizar.
- *
- * Receiver           Classe
- * Sabe como realizar todas as ações de todos os concrete commands.
- *
- * Invoker            Classe
- * Solicitante, classe responsável por solicitar a execução de uma ação de um concrete command.
- *
- * Client
- * Associa um receiver a um concrete command e faz a solicitação pelo invoker.
- *
- * ## Cenário de uso
- * Imagine um sistema de controle de som onde diferentes botões do controle remoto executam comandos distintos, como aumentar ou diminuir o volume.
- */
+// Command
+// Encapsula uma solicitação como um objeto, permitindo parametrizar clientes com diferentes solicitações, enfileirar ou registrar solicitações e suportar operações desfazíveis
+//
+// O objetivo do padrão é realizar solicitações (comandos) por meio de objetos
+//
+// Quando usar
+// Imagine um sistema de controle de som onde diferentes botões do controle remoto executam comandos distintos, como aumentar ou diminuir o volume
+//
+// Elementos
+// Command
+// Concrete Command
+// Invoker
+// Receiver
 
 // Command
+// Declara o método execute
 interface Command {
   // Por convenção e visando garantir o SRP, apenas o método execute é declarado
   // Cada comando concreto pode encapsular uma ação específica
@@ -35,6 +21,7 @@ interface Command {
 }
 
 // Receiver
+// Sabe como realizar todas as ações de todos os concrete commands
 class Speaker {
   // O Receiver deve apenas saber como realizar as ações que serão solicitadas pelos comandos
   volumeUp(): void {
@@ -47,6 +34,7 @@ class Speaker {
 }
 
 // Concrete Command
+// Implementa o command e sabe qual ação específica realizar
 class CommandVolumeUp implements Command {
   private speaker: Speaker;
 
@@ -75,6 +63,7 @@ class CommandVolumeDown implements Command {
 }
 
 // Invoker
+// Solicitante, classe responsável por solicitar a execução de uma ação de um concrete command
 class Control {
   private command: Command;
 
@@ -94,6 +83,7 @@ class Control {
 }
 
 // Client
+// Associa um receiver a um concrete command e faz a solicitação pelo invoker
 const speaker = new Speaker();
 const control = new Control(new CommandVolumeUp(speaker));
 control.pressButton();

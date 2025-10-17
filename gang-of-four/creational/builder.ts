@@ -4,6 +4,12 @@
 // Quando usar
 // O padrão builder só faz sentido quando podem existir diferentes produtos com interfaces distintas
 // Os builders nem sempre vão seguir a mesma interface, tornando o padrão diferente dos outros padrões de criação
+//
+// Elementos
+// Builder
+// Concrete Builder
+// Director
+// Product
 
 // Builder
 // Define a interface das etapas de construção do produto

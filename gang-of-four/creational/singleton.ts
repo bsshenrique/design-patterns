@@ -1,19 +1,15 @@
-/**
- * # Singleton
- *
- * ## Conceito
- * Garante que uma classe tenha apenas uma instância e fornece um ponto global de acesso a ela.
- *
- * ## Implementação
- * Singleton  Classe
- * Classe de uma única instância e de acesso global.
- *
- * ## Cenário de uso
- * Imagine um sistema com a necessidade de registrar logs no console.
- * O programa pode chamar a instância do singleton sempre que for necessária.
- */
+// Singleton
+// Garante que uma classe tenha apenas uma instância e fornece um ponto global de acesso a ela
+//
+// Quando usar
+// Imagine um sistema com a necessidade de registrar logs no console
+// O programa pode chamar a instância do singleton sempre que for necessária
+//
+// Elementos
+// Singleton
 
 // Singleton
+// Classe de uma única instância e de acesso global
 class Logger {
   static #instance: Logger;
 

@@ -1,27 +1,18 @@
-/**
- * # Facade
- *
- * ## Conceito
- * Fornece uma interface unificada para um conjunto de interfaces em um subsistema.
- * O Facade define uma interface de nível mais alto que torna o subsistema mais fácil de usar.
- *
- * ## Implementação
- * Facade     Classe
- * Encapsula a complexidade e a lógica de coordenação de classes complexas.
- *
- * Subsystem  Classe
- * Classe complexa que realizam o trabalho real.
- *
- * Client
- * Utilizam o facade para interagir com o sistema
- *
- * ## Cenário de uso
- * Imagine um sistema com duas classes, uma para processar áudio e outra para vídeo.
- * Para manter cada dessas classes com sua própria responsabilidade e desacoplada do cliente, pode-se criar um face.
- * Com isso, o cliente interage apenas com o facade, sem precisar conhecer os detalhes internos das classes.
- */
+// Facade
+// Fornece uma interface unificada para um conjunto de interfaces em um subsistema
+// O Facade define uma interface de nível mais alto que torna o subsistema mais fácil de usar
+//
+// Quando usar
+// Imagine um sistema com duas classes, uma para processar áudio e outra para vídeo
+// Para manter cada dessas classes com sua própria responsabilidade e desacoplada do cliente, pode-se criar um face
+// Com isso, o cliente interage apenas com o facade, sem precisar conhecer os detalhes internos das classes
+//
+// Elementos
+// Facade
+// Subsystem
 
 // Subsystem
+// Classe complexa que realizam o trabalho real
 class Video {
   private file: string;
 
@@ -52,6 +43,7 @@ interface Facade {
 }
 
 // Facade
+// Encapsula a complexidade e a lógica de coordenação de classes complexas
 class MediaPlayer implements Facade {
   private audio: Audio | null;
   private video: Video | null;
@@ -72,9 +64,10 @@ class MediaPlayer implements Facade {
   }
 }
 
+// Client
+// Subsystems podem ser usados diretamente pelos clientes, mas normalmente não é desejável
 const audio = new Audio("file.audio");
 const video = new Video("file.video");
-// Subsystems podem ser usados diretamente pelos clientes, mas normalmente não é desejável
 // O facade reduz o acoplamento entre cliente e o sistema interno, escondendo a complexidade e expondo o necessário
 const mediaPlayer = new MediaPlayer(audio, video);
 mediaPlayer.playMedia();

@@ -1,31 +1,18 @@
-/**
- * # Strategy
- *
- * ## Conceito
- * Define uma família de algoritmos, encapsula cada uma delas e torná-las intercambiáveis.
- * O strategy permite que o algoritmo varie independentemente dos clientes que o utilizam.
- *
- * ## Explicação
- * Permite definir uma família de algoritmos, encapsulá-los e torná-los intercambiáveis.
- * Dessa forma, o comportamento de um objeto pode ser alterado em tempo de execução sem modificar seu código.
- *
- * ## Implementação
- * Strategy           Classe Abstrata | Interface
- * Interface comum a todos algoritmos definidos pelas estratégias concretas.
- *
- * Concrete Strategy  Classe
- * Implementa uma variação específica do algoritmo exigido pela interface strategy.
- *
- * Context            Classe
- * Utiliza uma referência a um objeto strategy para que seja possível executar qualquer estratégia.
- *
- * Client
- * Define qual estratégia será utilizada pelo contexto.
- *
- * ## Cenário de uso
- * Imagine um programa com a necessidade de organizar uma tabela de pessoas.
- * Ao em vez de segmentar o programa com IF, pode-se alterar o comportamento utilizando diferentes estratégias.
- */
+// Strategy
+// Define uma família de algoritmos, encapsula cada uma delas e torná-las intercambiáveis
+// O strategy permite que o algoritmo varie independentemente dos clientes que o utilizam
+//
+// Permite definir uma família de algoritmos, encapsulá-los e torná-los intercambiáveis
+// Dessa forma, o comportamento de um objeto pode ser alterado em tempo de execução sem modificar seu código
+//
+// Quando usar
+// Imagine um programa com a necessidade de organizar uma tabela de pessoas
+// Ao em vez de segmentar o programa com IF, pode-se alterar o comportamento utilizando diferentes estratégias
+//
+// Elementos
+// Concrete Strategy
+// Context
+// Strategy
 
 interface Person {
   id: string;
@@ -33,12 +20,14 @@ interface Person {
 }
 
 // Strategy
+// Interface comum a todos algoritmos definidos pelas estratégias concretas
 interface Strategy {
   // Operações comuns aos algoritmos de estratégia
   sort(person: Person[]): Person[];
 }
 
 // Concrete Strategy
+// Implementa uma variação específica do algoritmo exigido pela interface strategy
 class SortById implements Strategy {
   sort(person: Person[]): Person[] {
     return person.slice().sort((a, b) => a.id.localeCompare(b.id));
@@ -53,6 +42,7 @@ class SortByName implements Strategy {
 }
 
 // Context
+// Utiliza uma referência a um objeto strategy para que seja possível executar qualquer estratégia
 class Context {
   // O contexto não deve conhecer nenhuma estratégias concretas, apenas a interface strategy
   // Ele deve ser compatível com qualquer estratégia
@@ -82,6 +72,7 @@ const person: Person[] = [
 ];
 
 // Client
+// Define qual estratégia será utilizada pelo contexto
 const context = new Context(new SortById());
 console.log(context.sort(person));
 context.setStrategy(new SortByName());
