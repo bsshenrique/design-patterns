@@ -1,34 +1,26 @@
-/**
- * # State
- *
- * ## Conceito
- * Permite que um objeto altere seu comportamento quando seu estado interno muda.
- * O objeto parecerá ter mudado sua classe.
- *
- * ## Explicação
- * O padrão utiliza classes chamadas de estados concretos para representar os possíveis estados.
- *
- * ## Implementação
- * Context          Classe
- * Objeto que muda de comportamento conforme o estado em que se encontra.
- *
- * State            Classe Abstrata | Interface
- * Define a interface comum a todos os estados concretos.
- *
- * Concrete State   Classe
- * Implementa a interface state, definindo comportamentos específicos para um estado concreto.
- *
- * ## Cenário de uso
- * Imagine um programa utilizado para gerenciar um sinal de trânsito.
- * Nesse sistema, o semáforo alterna continuamente entre os estados verde, amarelo e vermelho.
- */
+// State
+// Permite que um objeto altere seu comportamento quando seu estado interno muda
+// O objeto parecerá ter mudado sua classe
+//
+// O padrão utiliza classes chamadas de estados concretos para representar os possíveis estados
+//
+// Quando usar
+// Imagine um programa utilizado para gerenciar um sinal de trânsito
+// Nesse sistema, o semáforo alterna continuamente entre os estados verde, amarelo e vermelho
+//
+// Elementos
+// Concrete State
+// Context
+// State
 
 // State
+// Define a interface comum a todos os estados concretos
 interface State {
   changeColor(context: TrafficSignal): void;
 }
 
 // Concrete State
+// Implementa a interface state, definindo comportamentos específicos para um estado concreto
 class StateGreen implements State {
   // Um estado concreto deve implementar os comportamentos associados ao estado representado
   changeColor(context: TrafficSignal): void {
@@ -55,6 +47,7 @@ class StateYellow implements State {
 }
 
 // Context
+// Objeto que muda de comportamento conforme o estado em que se encontra
 class TrafficSignal {
   // O contexto deve manter a referência ao atual estado
   private state: State;

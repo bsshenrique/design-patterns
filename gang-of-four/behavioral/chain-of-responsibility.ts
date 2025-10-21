@@ -1,27 +1,19 @@
-/**
- * # Chain of Responsibility
- *
- * ## Conceito
- * Evita acoplar o remetente de uma solicitação ao seu receptor, dando a mais de um objeto a chance de tratar a solicitação.
- * Encadeia os objetos receptores e passa a solicitação ao longo da cadeia até que um objeto a trate.
- *
- * ## Implementação
- * Handler            Interface
- * Interface comum a todos os concrete handlers.
- * Deve definir o método para lidar com solicitações, e opcionalmente o método para encaminhar solicitações.
- *
- * Concrete Handler   Classe
- * Lida com as solicitações de sua responsabilidade ou, se não for sua responsabilidade, passa para um próximo handler.
- *
- * Client
- * Deve ter a capacidade de enviar uma requisição para qualquer handler, não apenas para o primeiro da cadeia.
- *
- * ## Cenário de uso
- * Imagine uma aplicação com níveis de suporte.
- * Se o nível de suporte mais simples não for capaz de resolver, o pedido deve ser enviado aos níveis mais avançados.
- */
+// Chain of Responsibility
+// Evita acoplar o remetente de uma solicitação ao seu receptor, dando a mais de um objeto a chance de tratar a solicitação
+// Encadeia os objetos receptores e passa a solicitação ao longo da cadeia até que um objeto a trate
+//
+// Quando usar
+// Imagine uma aplicação com níveis de suporte
+// Se o nível de suporte mais simples não for capaz de resolver, o pedido deve ser enviado aos níveis mais avançados
+//
+// Elementos
+// Classe base - opcional
+// Concrete Handler
+// Handler
 
 // Handler
+// Interface comum a todos os concrete handlers
+// Deve definir o método para lidar com solicitações, e opcionalmente o método para encaminhar solicitações
 interface Handler {
   handle(level: string): string;
   // Um método next tem como propósito criar o comportamento de encadeamento
@@ -51,6 +43,7 @@ abstract class BaseHandler implements Handler {
 }
 
 // Concrete Handler
+// Lida com as solicitações de sua responsabilidade ou, se não for sua responsabilidade, passa para um próximo handler
 class HelpDeskHandler extends BaseHandler {
   public handle(level: string) {
     if (level === "help_desk") {
@@ -81,15 +74,17 @@ class AdvancedSupportHandler extends BaseHandler {
   }
 }
 
+// Client
+// Deve ter a capacidade de enviar uma requisição para qualquer handler, não apenas para o primeiro da cadeia
 const helpDesk = new HelpDeskHandler();
 const technicalSupport = new TechnicalSupportHandler();
 const advancedSupport = new AdvancedSupportHandler();
 
-// A cadeia de handlers é construída conforme necessidade do cliente.
+// A cadeia de handlers é construída conforme necessidade do cliente
 // Funciona basicamente assim:
 // helpDesk define que technicalSupport é seu próximo handler e retorna o handler technicalSupport;
 // technicalSupport define que advancedSupport é seu próximo handler e retorna advancedSupport;
-// E assim sucessivamente.
+// E assim sucessivamente
 // Graça a esse comportamento, advancedSupport seria capaz de definir seu próximo handler
 helpDesk.next(technicalSupport).next(advancedSupport);
 
