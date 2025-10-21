@@ -13,6 +13,7 @@ Ou:
 ## Padrões de Projetos
 - Gang of Four
   - Creational
+    - [Builder](gang-of-four/creational/builder.ts)
     - [Factory Method](gang-of-four/creational/factory-method.ts)
     - [Prototype](gang-of-four/creational/prototype.ts)
     - [Singleton](gang-of-four/creational/singleton.ts)
