@@ -13,6 +13,7 @@ Ou:
 ## Padrões de Projetos
 - Gang of Four
   - Creational
+    - [Abstract Factory](gang-of-four/creational/abstract-factory.ts)
     - [Builder](gang-of-four/creational/builder.ts)
     - [Factory Method](gang-of-four/creational/factory-method.ts)
     - [Prototype](gang-of-four/creational/prototype.ts)
@@ -37,6 +38,5 @@ Ou:
 ## Fonte
 Todo conteúdo foi retirado de:  
 [ChatGPT](https://chatgpt.com)  
-[GeeksforGeeks](https://www.geeksforgeeks.org/system-design/software-design-patterns/)  
 [Refactoring.Guru](https://refactoring.guru/design-patterns)  
 [Wikipedia - Software design pattern](https://en.wikipedia.org/wiki/Software_design_pattern)
