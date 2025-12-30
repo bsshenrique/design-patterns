@@ -20,6 +20,7 @@ Ou:
     - [Singleton](gang-of-four/creational/singleton.ts)
   - Structural
     - [Adapter](gang-of-four/structural/adapter.ts)
+    - [Bridge](gang-of-four/structural/bridge.ts)
     - [Decorator](gang-of-four/structural/decorator.ts)
     - [Facade](gang-of-four/structural/facade.ts)
     - [Proxy](gang-of-four/structural/proxy.ts)
