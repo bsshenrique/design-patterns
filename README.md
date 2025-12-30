@@ -21,15 +21,22 @@ Ou:
   - Structural
     - [Adapter](gang-of-four/structural/adapter.ts)
     - [Bridge](gang-of-four/structural/bridge.ts)
+    - Composite
     - [Decorator](gang-of-four/structural/decorator.ts)
     - [Facade](gang-of-four/structural/facade.ts)
+    - Flyweight
     - [Proxy](gang-of-four/structural/proxy.ts)
   - Behavioral
     - [Command](gang-of-four/behavioral/command.ts)
     - [Chain of Responsibility](gang-of-four/behavioral/chain-of-responsibility.ts)
+    - Iterator
+    - Mediator
+    - Memento
+    - Observer
     - [State](gang-of-four/behavioral/state.ts)
     - [Strategy](gang-of-four/behavioral/strategy.ts)
     - [Template Method](gang-of-four/behavioral/template-method.ts)
+    - Visitor
 - Other
   - [Currying](other/currying.ts)
   - [Function Composition](other/function-composition.ts)
